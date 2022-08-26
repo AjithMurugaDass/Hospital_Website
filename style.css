@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+}
+header {
+  width: 100%;
+  /* height: 60px; */
+  position: fixed;
+  z-index: 20;
+  border-bottom: 1px solid rgb(189 195 200);
+}
+#logo {
+  float: left;
+  padding: 10px 10px 0px;
+  margin-left: 30px;
+  font-size: 26px;
+  color: #444;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+}
+#logo span {
+  color: rgb(0, 153, 255);
+}
+header ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin-left: auto;
+  width: 50%;
+  align-items: center;
+  height: 52px;
+}
+header li:hover a {
+  border-bottom: 2px solid rgb(0, 153, 255);
+}
+header li a:hover {
+  color: #444;
+}
+.active {
+  border-bottom: 3px solid rgb(0, 153, 255);
+}
+header li a {
+  padding: 10px 10px 17px;
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  font-weight: 200;
+}
+section {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 585px;
+}
+.container {
+  position: relative;
+}
+.container h5 {
+  margin-bottom: 30px;
+  color: purple;
+  text-indent: 20px;
+  font-style: italic;
+}
+.image {
+  position: absolute;
+  z-index: -1;
+  left: -250px;
+  top: -150px;
+}
+.image img {
+  width: 70%;
+}
+.image:after {
+  content: "";
+  position: absolute;
+  background: url("bg2.png");
+  background-size: 1400px 350px;
+  width: 1295px;
+  height: 350px;
+  left: -20px;
+  bottom: -120px;
+  transform: rotate(-180deg);
+  overflow: auto;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.content h4 {
+  display: block;
+  width: 100%;
+  color: rgb(0, 153, 255);
+  font-size: 13px;
+}
+.leftside {
+  width: 100%;
+  padding: 15px 10px;
+}
+.leftside p {
+  text-indent: 40px;
+  font-size: 18px;
+  /* font-style: italic; */
+  color: rgba(0, 0, 0, 0.6);
+}
+h1 {
+  font-size: 40px;
+  color: #444;
+  padding-bottom: 10px;
+}
+.signup {
+  padding: 3px 3px;
+  border-radius: 10px;
+  margin: 10px;
+  transition: 300ms ease;
+}
+
+.signup button {
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(0, 153, 255);
+  color: #fff;
+  cursor: pointer;
+  /* transform: scale(1.02); */
+}
+.login {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 2px;
+  border: 1px solid rgb(0, 153, 255);
+  color: rgb(0, 153, 255);
+  background-color: #fff;
+  cursor: pointer;
+  transform: translateX(95px);
+}
+.signin:hover,
+.signup:hover {
+  transform: scale(1.04);
+}
+.doctorReg,
+.doctorLogIn {
+  /* display: none; */
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 500px;
+  height: 450px;
+  box-shadow: 0 0 5px rgb(0, 153, 255);
+  padding: 0 90px;
+  z-index: 10;
+  transition: transform 300ms, top 300ms;
+  background-color: #fff;
+}
+.doctorLogIn {
+  left: 70%;
+  /* visibility: visible; */
+  transform: translate(-50%, -50%);
+}
+.signup-content,
+.patientLogIn {
+  visibility: hidden;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.25), 0 -1px 10px rgba(0, 0, 0, 0.22);
+  padding: 0 90px;
+  z-index: 10;
+  background-color: #fff;
+}
+#patientLoginForm,
+#patientRegisterForm {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 20px;
+}
+#patientRegisterForm {
+  gap: 15px;
+}
+.patientLogIn {
+  left: 50%;
+  /* visibility: hidden; */
+}
+.patientLogIn label,
+.patientLogIn input[type="checkbox"] {
+  font-size: 13px;
+}
+.signup-content h3,
+.doctorReg h3,
+.doctorLogIn h3,
+.patientLogIn h3 {
+  color: rgb(0, 153, 255);
+  align-self: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.signup-content input,
+.doctorReg input,
+.doctorLogIn input,
+.patientLogIn input {
+  padding: 8px 15px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 153, 255);
+}
+#error,
+#signUpError {
+  position: absolute;
+  color: #721c24;
+  top: 70px;
+  left: 90px;
+  background-color: #f8d7da;
+  padding: 10px 20px;
+  opacity: 0;
+  border-radius: 3px;
+  width: 320px;
+
+  border: 1px solid #f5c6cb;
+}
+.signup-content #signUpError {
+  top: 40px;
+  opacity: 0;
+  width: 320px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 2px;
+}
+.errClose,
+.errSignUpClose {
+  font-size: 22px;
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.signup-content label {
+  padding-left: 5px;
+  font-size: 14px;
+}
+.signup-content p {
+  font-size: 12px;
+}
+.close {
+  color: rgb(0, 153, 255);
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.openmodal {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.patientLogIn p {
+  font-size: 13px;
+  color: #444;
+  display: inline;
+  padding-right: 5px;
+}
+.patientLogIn a {
+  text-decoration: none;
+  font-size: 13px;
+}
+input[type="submit"],
+input[type="button"] {
+  background-color: rgb(0, 153, 255);
+  color: #fff;
+  cursor: pointer;
+}
+.signUpSuccessContainer {
+  width: 100%;
+  height: 687px;
+  position: absolute;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 100;
+}
+.signUpSuccessContainer_Active {
+  visibility: visible;
+}
+.signupSuccess {
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 70px 20px 10px;
+}
+.signupSuccess h2 {
+  color: #555;
+  font-family: "Ubuntu";
+  padding: 10px;
+  margin: 0 20px;
+  text-align: center;
+}
+.signupSuccess p {
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0 10px;
+}
+.signupSuccess button {
+  padding: 6px 30px;
+  border: none;
+  background-color: rgb(70, 184, 80);
+  color: #fff;
+  width: 100%;
+  font-size: 17px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ticks {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(70, 184, 80);
+  position: absolute;
+  border-radius: 50%;
+  top: 190px;
+}
+.tick {
+  font-size: 100px;
+  color: #fff;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+}
+
+#password,
+#p-pass {
+  width: 100%;
+}
+.passwordEye,
+.pEye {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+}
+.pField {
+  position: relative;
+}
+.passwordEye:hover,
+.pEye:hover {
+  color: #222;
+}

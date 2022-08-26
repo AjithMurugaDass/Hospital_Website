@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+
+   <script src="appointment.js" defer></script>
+  <link rel="stylesheet" href="appointment.css" />
+</head>
+<body>
+    <header>
+        <a href="#" id="logo"><span>Medi</span>con</a>
+        <ul>
+          <li>
+            <a class="nav home" href="home.html" onclick="home()">Home</a>
+          </li>
+          <li>
+            <a
+              href="appointment.html"
+              class="nav appointment ">Appointments</a>
+          </li>
+          <li><a id="doctorBtn" class="nav active" href="doctor.html">Doctors</a></li>
+          <li><a class="nav" href="service.html">Services</a></li>
+          <li><a class="nav " href="about.html">About</a></li>
+          <li>
+            <button class="navBtn" onclick="openForm()">
+              Book Appointment
+            </button>
+          </li>
+          <li id="small-logo" onclick="logo()"></li>
+        </ul>
+        </header>
+    <section class="service">
+      <div class="gif">
+        <p>Page is Under Construction.....</p>
+        <img src="8t4M.gif" alt="">
+        <p>copyrights &#169 by <span>Medi</span>con ltd.</p>
+      </div>
+    </section>
+        <section class="container_2">
+        <div class="form_container">
+          <h3>Doctor Appointment Form</h3>
+          <span class="closeForm" onclick="closeForm()">&times;</span>
+
+          <form action="#" id="form">
+
+            <div class="field">
+              <div class="nameField">
+                <h5>Name<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="First"
+                  id="fname"
+                  name="firstName"
+                />
+                <input
+                  type="text"
+                  placeholder="Last"
+                  id="lname"
+                  name="lastName"
+                />
+              </div>
+              <div class="genderField">
+                <h5>Gender<span>*</span></h5>
+                <select name="gender" id="gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Transgender">Transgender</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="dob">
+                <h5>Date of Birth<span>*</span></h5>
+                <input
+                  type="date"
+                  placeholder=" "
+                  value=""
+                  id="dob"
+                  name="date_of_birth"
+                />
+              </div>
+              <div class="phone">
+                <h5>Phone<span>*</span></h5>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="mobile"
+                />
+              </div>
+            </div>
+ 
+            <div class="field">
+              <div class="address">
+                <h5>Address<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Street Address"
+                  id="staddress"
+                  name="address"
+                />
+                <input type="text" placeholder="Street Address line 2" />
+                <div class="cityfield">
+                  <input type="text" placeholder="City" name="city" id="city" />
+                  <input type="text" placeholder="Region" id="region" />
+                </div>
+                <input type="number" placeholder="Postal / Zip Code" />
+              </div>
+              <div class="email">
+                <h5>Email<span>*</span></h5>
+                <input type="email" placeholder=" " id="mail" name="mail" />
+              </div>
+            </div>
+            <div class="details_heading">
+              <p>Appointment Information</p>
+            </div>
+            <div class="field">
+              <div class="symptoms">
+                <h5>Symptoms<span>*</span></h5>
+                <select name="symptom" id="symptom">
+                  <option value="">-Select-</option>
+                  <option value="Fever">Fever</option>
+                  <option value="cold">Cold</option>
+                  <option value="Headache">Headache</option>
+                  <option value="Other">Others</option>
+                </select>
+              </div>
+              <div class="doctor_name">
+                <h5>Which Doctor (Faculty) you want to see?</h5>
+                <select name="doctor" id="doctor">
+                  <option value="">Select Dr</option>
+                  <option value="Dr.John">Dr.John</option>
+                  <option value="Dr.Smith">Dr.Smith</option>
+                  <option value="Dr.Nishant Singh">Dr.Nishant Singh</option>
+                  <option value="Dr.Gautam">Dr.Gautam</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <div class="dateofappoint">
+                <h5>Date of appointment<span>*</span></h5>
+                <input
+                  type="datetime-local"
+                  name="appointment_time"
+                  id="appointmentTime"
+                />
+              </div>
+              <div class="blood">
+                <h5>Blood Group<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: AB+"
+                  id="blood"
+                  name="blood_group"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="height">
+                <h5>Height<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: 170"
+                  id="height"
+                  name="height"
+                />
+              </div>
+              <div class="weight">
+                <h5>Weight<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: 70Kg"
+                  id="weight"
+                  name="weight"
+                />
+              </div>
+            </div>
+            <div class="filed">
+              <div class="brief">
+                <h5>Explain your medical health briefly...<span>*</span></h5>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="50"
+                  rows="7"
+                  placeholder="Type here... "
+                  ></textarea>
+              </div>
+            </div>
+            <div class="field12">
+              <div class="submit">
+                <input
+                  type="button"
+                  value="Make an appointment"
+                  id="submit"
+                  onclick="doSubmit()"
+                />
+              </div>
+            </div>
+ 
+            <div class="successMsg">
+              <p>Form is submitted Succesfully!</p>
+            </div>
+          </form>
+        </div>
+      </section>
+</body>
+</html>

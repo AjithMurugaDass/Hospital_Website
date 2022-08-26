@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="appointment.css" />
+    <!-- <script src="appointment.js" defer></script> -->
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body id="body">
+    <main id="main">
+      <header>
+        <a href="#" id="logo"><span>Medi</span>con</a>
+        <ul>
+          <li>
+            <a class="nav home" href="home.html" onclick="home()">Home</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav appointment active"
+              onclick="openAppointment()"
+              >Appointments</a
+            >
+          </li>
+          <li><a id="doctorBtn" class="nav" href="doctor.html">Doctors</a></li>
+          <li><a class="nav" href="service.html">Services</a></li>
+          <li><a class="nav" href="about.html">About</a></li>
+          <li>
+            <button class="navBtn" onclick="openForm()">Book Appointment</button>
+          </li>
+          <li id="small-logo" onclick="logo()"></li>
+        </ul>
+      </header>
+      <section class="historycontainer">
+        <div id="tagContainer">
+          <h4>My Appointments</h4>
+          <div class="tags">
+            <span><span class="material-symbols-outlined filter" onclick="filter()">sort</span></span>
+            <div class="filterTag">
+              <span class="tag all tagActive"  onclick="doSort('all')"> All</span>
+              <span class="tag booked" onclick="doSort('booked')">Booked</span>
+              <span class="tag completed">Completed</span>
+              <span class="tag cancel"  onclick="doSort('cancel')">Cancelled</span>
+            </div>
+          </div>
+        </div>
+        <div class="emptyCancel">
+          <div>
+            <img src="noAppointments.jpg" alt="noAppointmentsImage">
+            <div>
+              <h4>You have no cancelled appointments.</h4>
+              <p>Keey your health healthy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bookedEmpty">
+          <div>
+            <img src="noAppointments.jpg" alt="noAppointmentsImage">
+            <div>
+              <h4>You didn't book any appointments,Currently.</h4>
+              <p>Keey your health healthy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="history_box1">
+          <!-- <div class="history">
+          <div>
+            <p id="dname">Doctor<span>${
+              data.doctor
+            }</span></p>
+          </div>
+          <div>
+          <p class="date"><i class="large material-icons today">today</i><span>${appointmentDate}</span></p>
+          </div>
+          <div>
+            <p class="appointmentTime"><i class="large material-icons time">access_time</i><span>${
+              appointmentTime === undefined ? "10:00" : appointmentTime
+            }</span></p>
+          </div>
+          <div >
+            <p class="label_symptom">Symptom's<span>${data.symptom}</span></p>
+          </div>
+          <div>
+            <p class="p-name">Name <span>${
+              data.firstName + " " + data.lastName
+            }</span></p>
+          </div>
+          <span class="close" onclick="closeCard()">&times;</span>
+            <span class="${bookDetails}">${bookDetails}</span>
+
+        </div> -->
+        </div>
+
+      </section>
+      <div class="appointment-container">
+        <div class="doctor-image">
+          <!-- <img src="doctorleft.png" alt="DoctorImage" /> -->
+          <img src="doctorCartoon.jpg" alt="DoctorImage" />
+
+        </div>
+        <div class="appoint-content">
+          <h3>You have no appointments scheduled</h3>
+          <button class="btn" onclick="openForm()">Make an Appointment</button>
+        </div>
+      </div>
+      <section class="container_2">
+        <div class="form_container">
+          <h3>Doctor Appointment Form</h3>
+          <span class="closeForm" onclick="closeForm()">&times;</span>
+
+          <form action="#" id="form">
+            <!-- Field1 -->
+            <div class="field">
+              <div class="nameField">
+                <h5>Name<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="First"
+                  id="fname"
+                  name="firstName"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Last"
+                  id="lname"
+                  name="lastName"
+                />
+              </div>
+              <div class="genderField">
+                <h5>Gender<span>*</span></h5>
+                <select name="gender" id="gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Transgender">Transgender</option>
+                </select>
+              </div>
+            </div>
+            <!-- Field 2 -->
+            <div class="field">
+              <div class="dob">
+                <h5>Date of Birth<span>*</span></h5>
+                <input
+                  type="date"
+                  placeholder=" "
+                  value=""
+                  id="dob"
+                  name="date_of_birth"
+                />
+              </div>
+              <div class="phone">
+                <h5>Phone<span>*</span></h5>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="mobile"
+                />
+              </div>
+            </div>
+            <!-- Field 3 -->
+            <div class="field">
+              <div class="address">
+                <h5>Address<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Street Address"
+                  id="staddress"
+                  name="address"
+                />
+                <input type="text" placeholder="Street Address line 2" />
+                <div class="cityfield">
+                  <input type="text" placeholder="City" name="city" id="city" />
+                  <input type="text" placeholder="Region" id="region" />
+                </div>
+                <input type="number" placeholder="Postal / Zip Code" />
+              </div>
+              <div class="email">
+                <h5>Email<span>*</span></h5>
+                <input type="email" placeholder=" " id="mail" name="mail" />
+              </div>
+            </div>
+            <div class="details_heading">
+              <p>Appointment Information</p>
+            </div>
+            <div class="field">
+              <div class="symptoms">
+                <h5>Symptoms<span>*</span></h5>
+                <select name="symptom" id="symptom">
+                  <option value="">-Select-</option>
+                  <option value="Fever">Fever</option>
+                  <option value="cold">Cold</option>
+                  <option value="Headache">Headache</option>
+                  <option value="Other">Others</option>
+                </select>
+              </div>
+              <div class="doctor_name">
+                <h5>Which Doctor (Faculty) you want to see?</h5>
+                <select name="doctor" id="doctor">
+                  <option value="">Select Dr</option>
+                  <option value="Dr.John">Dr.John</option>
+                  <option value="Dr.Smith">Dr.Smith</option>
+                  <option value="Dr.Nishant">Dr.Nishant Singh</option>
+                  <option value="Dr.Gautam">Dr.Gautam</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <div class="dateofappoint">
+                <h5>Date of appointment<span>*</span></h5>
+                <input
+                  type="datetime-local"
+                  name="appointment_time"
+                  id="appointmentTime" min="2022-08-05T17:30"
+                  
+                />
+              </div>
+              <div class="blood">
+                <h5>Blood Group<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: AB+"
+                  id="blood"
+                  name="blood_group"
+                />
+              </div>
+            </div>
+            <!-- Field 9 -->
+            <div class="field">
+              <div class="height">
+                <h5>Height<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: 170"
+                  id="height"
+                  name="height"
+                />
+              </div>
+              <div class="weight">
+                <h5>Weight<span>*</span></h5>
+                <input
+                  type="text"
+                  placeholder="Eg: 70Kg"
+                  id="weight"
+                  name="weight"
+                />
+              </div>
+            </div>
+            <!-- Field 12 -->
+            <div class="filed">
+              <div class="brief">
+                <h5>Explain your medical health briefly...<span>*</span></h5>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="50"
+                  rows="7"
+                  placeholder="Type here... "
+                ></textarea>
+              </div>
+            </div>
+            <!-- Field 12  -->
+            <div class="field12">
+              <div class="submit">
+                <input
+                  type="button"
+                  value="Make an appointment"
+                  id="submit"
+                  onclick="doSubmit()"
+                />
+              </div>
+            </div>
+            <!-- Msg -->
+            <div class="successMsg">
+              <p>Form is submitted Succesfully!</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+              
+
+      <!-- Appointments Booked / History -->
+
+      <div class="accDet" >
+        <p id="accUserid">UserName</p>
+        <p id="accUseremail">useremail@gmail.com</p>
+        <p class="acc-logout"><a href="index.html"><span class="material-symbols-outlined">logout</span></a></p>
+      </div>
+
+      <div class="detailsCardContainer">
+        <div class="detailsCard">
+          <ul>
+            <li>Doctor name</li>
+            <li>Patient name</li>
+            <li>Symptom</li>
+            <li>Appointment Date</li>
+            <li>Appointment Time</li>
+            <li>Email</li>
+            <li>Mobile</li>
+          </ul>
+          <span class="closeDetCard" onclick="closeDetCard()">&times;</span>
+        </div>
+      </div>
+    </main>
+  </body>
+    <script src="appointment.js" defer></script>
+
+</html>

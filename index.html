@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="#" id="logo"><span>Medi</span>con</a>
+        <ul>
+          <li><a class="nav active" href="#">Home</a></li>
+          <li><a id="doctorBtn" class="nav" href="#">Doctors</a></li>
+          <li><a class="nav" href="#">Services</a></li>
+          <li><a class="nav" href="#">About</a></li>
+        </ul>
+      </header>
+      <div class="doctorReg">
+        <span class="close" onclick="closeMod()">&times;</span>
+        <h3>Welcome Dr...!</h3>
+        <form action="#" method="get">
+          <input
+            type="text"
+            placeholder="Dr.Name"
+            id="dr-name"
+            name="doctorname"
+            required
+          />
+          <input
+            type="email"
+            placeholder="E-mail"
+            id="dr-email"
+            name="doctor-email"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="dr-pass"
+            name="doctor-pass"
+          />
+          <input
+            type="tel"
+            placeholder="Eg : +91 "
+            id="dr-phone"
+            name="doctor-mobile"
+          />
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+      <div class="doctorLogIn">
+        <span class="close" onclick="closeMod()">&times;</span>
+        <h3>Log in</h3>
+        <!-- <input type="text" placeholder="Dr.Name" id="dl-name" name="doctorname"> -->
+        <input
+          type="email"
+          placeholder="E-mail"
+          id="dl-email"
+          name="doctor-email"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          id="dl-pass"
+          name="doctor-pass"
+        />
+        <input type="submit" value="Log in" />
+      </div>
+      <section>
+        <div class="container">
+          <div class="image">
+            <img src="d2.png" alt="bg" />
+          </div>
+          <div class="leftside">
+            <h1>Feel better about finding healthcare</h1>
+            <p>
+              We provide the best consultation to you with the best doctor in
+              his field.
+            </p>
+          </div>
+          <div class="content">
+            <div class="signup">
+              <button class="btn register">Get Started</button>
+            </div>
+            <div class="signup-content">
+              <span class="close" onclick="closeMod()">&times;</span>
+              <h3>Register Now!</h3>
+              <form action="" id="patientRegisterForm">
+                <p id="signUpError">
+                  Invalid Username and password.Try Again<span
+                    class="errSignUpClose"
+                    onclick="closeSignUpErrorFun()"
+                    >&times;</span
+                  >
+                </p>
+                <input
+                  type="text"
+                  placeholder="User name"
+                  id="username"
+                  name="userName"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  id="email"
+                  name="Email"
+                  required
+                />
+                <div class="pField">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="password"
+                    maxlength="10"
+                    minlength="6"
+                    name="password"
+                    required
+                  /><span class="passwordEye material-symbols-outlined"
+                    >Visibility</span
+                  >
+                </div>
+                <input
+                  type="tel"
+                  placeholder="Phone"
+                  id="phone"
+                  name="mobile"
+                  required
+                />
+                <label for="terms"
+                  ><input type="checkbox" id="terms" required checked /> I agree
+                  to the terms and conditions</label
+                >
+                <input type="submit" value="Sign Up" id="submitsignup" />
+                <p>
+                  Already have an account?
+                  <button onclick="openLogin()" class="btn login">
+                    Sign in
+                  </button>
+                </p>
+              </form>
+            </div>
+            <!-- <div class="signin">
+            <button onclick="openLogin()" class="btn login">Signin</button>
+          </div> -->
+            <div class="patientLogIn">
+              <span class="close" onclick="closeMod()">&times;</span>
+              <h3>Log in</h3>
+              <form id="patientLoginForm">
+                <p id="error">
+                  Invalid Email and password.Try Again<span
+                    class="errClose"
+                    onclick="closeError()"
+                    >&times;</span
+                  >
+                </p>
+                <!-- <input type="text" placeholder="Patient Name" id="p-name" name="Patient name" required> -->
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  id="p-email"
+                  name="Patient-email"
+                  required
+                />
+                <div class="pField">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="p-pass"
+                    name="Patient-pass"
+                    required
+                  />
+                  <span class="pEye material-symbols-outlined">Visibility</span>
+                </div>
+                <label for="remember"
+                  ><input type="checkbox" id="remember" /> Remember me</label
+                >
+                <input type="button" value="Log in" id="submitPatLogin" />
+                <!-- <button type="button" id="submitPatLogin">Login</button> -->
+                <div class="click_here">
+                  <p>Don't have an account?</p>
+                  <a href="#" onclick="openSignUp()">Click here.</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- <h5>*this is for patients only</h5> -->
+        </div>
+        <div class="signUpSuccessContainer">
+          <div class="signupSuccess">
+            <h2>Awesome !</h2>
+            <p>Your Succesfully Signed Up</p>
+            <button onclick="loginBox()">Login</button>
+          </div>
+          <div class="ticks">
+            <span class="material-symbols-outlined tick">Done</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
